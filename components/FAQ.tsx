@@ -23,7 +23,7 @@ const faqs = [
   {
     question: 'How is pricing determined?',
     answer:
-      'We offer transparent, value-based pricing that scales with your property performance. Most owners see ROI within the first month. Let's discuss what works best for you.',
+      "We offer transparent, value-based pricing that scales with your property performance. Most owners see ROI within the first month. Let's discuss what works best for you.",
   },
   {
     question: 'Do you handle cleaning coordination?',

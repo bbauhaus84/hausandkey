@@ -7,7 +7,7 @@ const steps = [
     number: '1',
     title: 'Schedule a Consultation',
     description:
-      'Let's talk about your property, goals, and timeline. No pressure—just a friendly conversation.',
+      "Let's talk about your property, goals, and timeline. No pressure—just a friendly conversation.",
   },
   {
     number: '2',
@@ -19,7 +19,7 @@ const steps = [
     number: '3',
     title: 'We Manage, You Relax',
     description:
-      'Guests, messages, cleanings, reviews. We've got it all. You focus on what matters to you.',
+      "Guests, messages, cleanings, reviews. We've got it all. You focus on what matters to you.",
   },
 ];
 
