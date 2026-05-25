@@ -1,3 +1,4 @@
+'use client';
 // Why Work With Us - value proposition section
 import { motion } from 'framer-motion';
 import {

@@ -1,3 +1,4 @@
+'use client';
 // Contact Page - Contact form and information
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';

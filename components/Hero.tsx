@@ -1,3 +1,4 @@
+'use client';
 // Hero section for home page - main value proposition
 import Link from 'next/link';
 import { motion } from 'framer-motion';

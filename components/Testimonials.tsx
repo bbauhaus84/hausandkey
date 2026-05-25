@@ -1,3 +1,4 @@
+'use client';
 // Testimonials section for home page
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';

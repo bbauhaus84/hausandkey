@@ -1,3 +1,4 @@
+'use client';
 // Simple 3-step process section for home page
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';

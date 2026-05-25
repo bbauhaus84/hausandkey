@@ -1,3 +1,4 @@
+'use client';
 // Home Page - Modern landing with hero, services, testimonials, FAQ, and CTA sections
 import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';

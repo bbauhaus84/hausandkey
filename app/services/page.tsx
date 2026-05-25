@@ -1,3 +1,4 @@
+'use client';
 // Services Page - Detailed description of all services offered
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';

@@ -1,3 +1,4 @@
+'use client';
 // Revenue Optimization section for home page
 import { motion } from 'framer-motion';
 import { TrendingUp, BarChart3, Calendar, DollarSign } from 'lucide-react';

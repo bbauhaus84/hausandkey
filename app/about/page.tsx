@@ -1,3 +1,4 @@
+'use client';
 // About Page - Founder story and bio
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
