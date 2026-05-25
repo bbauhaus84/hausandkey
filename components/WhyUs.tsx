@@ -68,10 +68,10 @@ export default function WhyUs() {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-coastal-900 mb-4">
             Why Work With Us
           </h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+          <p className="text-xl text-coastal-600 max-w-2xl mx-auto">
             We blend professional expertise with genuine hospitality passion.
             Your property deserves both.
           </p>
@@ -91,13 +91,13 @@ export default function WhyUs() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="p-8 rounded-xl border border-slate-200 hover:border-amber-300 hover:shadow-lg transition-all bg-slate-50 hover:bg-white"
+                className="p-8 rounded-xl border border-coastal-200 hover:border-coastal-300 hover:shadow-lg transition-all bg-coastal-50 hover:bg-white"
               >
-                <Icon className="w-12 h-12 text-amber-600 mb-4" />
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                <Icon className="w-12 h-12 text-coastal-500 mb-4" />
+                <h3 className="text-xl font-semibold text-coastal-900 mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-slate-600">{feature.description}</p>
+                <p className="text-coastal-600">{feature.description}</p>
               </motion.div>
             );
           })}

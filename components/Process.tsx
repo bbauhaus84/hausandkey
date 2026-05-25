@@ -26,14 +26,14 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-slate-50 to-white">
+    <section className="py-20 px-4 bg-gradient-to-br from-coastal-50 to-white">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-coastal-900 mb-4">
             How It Works
           </h2>
-          <p className="text-xl text-slate-600">
+          <p className="text-xl text-coastal-600">
             Three simple steps to stress-free hosting
           </p>
         </div>
@@ -54,16 +54,16 @@ export default function Process() {
             >
               <div className="flex flex-col items-center">
                 {/* Number Circle */}
-                <div className="w-24 h-24 rounded-full bg-amber-600 text-white flex items-center justify-center text-3xl font-bold mb-6 shadow-lg">
+                <div className="w-24 h-24 rounded-full bg-coastal-500 text-white flex items-center justify-center text-3xl font-bold mb-6 shadow-lg">
                   {step.number}
                 </div>
 
                 {/* Content */}
                 <div className="text-center">
-                  <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                  <h3 className="text-xl font-semibold text-coastal-900 mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-slate-600">{step.description}</p>
+                  <p className="text-coastal-600">{step.description}</p>
                 </div>
               </div>
             </motion.div>
@@ -79,7 +79,7 @@ export default function Process() {
           className="text-center mt-16"
         >
           <a href="/contact">
-            <button className="px-8 py-4 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-700 transition-colors inline-flex items-center gap-2">
+            <button className="px-8 py-4 bg-coastal-500 text-white rounded-lg font-semibold hover:bg-coastal-600 transition-colors inline-flex items-center gap-2">
               <Check size={20} />
               Get Started Today
             </button>

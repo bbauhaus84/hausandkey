@@ -4,7 +4,7 @@ import { Instagram, Mail, Phone } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-white py-12 px-4">
+    <footer className="bg-coastal-900 text-white py-12 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
@@ -20,22 +20,22 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm text-slate-400">
               <li>
-                <Link href="/" className="hover:text-amber-400 transition-colors">
+                <Link href="/" className="hover:text-coastal-400 transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-amber-400 transition-colors">
+                <Link href="/services" className="hover:text-coastal-400 transition-colors">
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-amber-400 transition-colors">
+                <Link href="/about" className="hover:text-coastal-400 transition-colors">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-amber-400 transition-colors">
+                <Link href="/contact" className="hover:text-coastal-400 transition-colors">
                   Contact
                 </Link>
               </li>
@@ -48,7 +48,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-slate-400">
               <li className="flex items-center gap-2">
                 <Mail size={16} />
-                <a href="mailto:hello@hausandkey.com" className="hover:text-amber-400 transition-colors">
+                <a href="mailto:hello@hausandkey.com" className="hover:text-coastal-400 transition-colors">
                   hello@hausandkey.com
                 </a>
               </li>
@@ -67,7 +67,7 @@ export default function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-slate-800 p-2 rounded-lg hover:bg-amber-600 transition-colors"
+                className="bg-coastal-800 p-2 rounded-lg hover:bg-coastal-500 transition-colors"
               >
                 <Instagram size={20} />
               </a>

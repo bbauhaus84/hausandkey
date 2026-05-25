@@ -28,7 +28,7 @@ const stats = [
 
 export default function RevenueOptimization() {
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-amber-50 to-white">
+    <section className="py-20 px-4 bg-gradient-to-br from-coastal-50 to-white">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left: Content */}
@@ -38,10 +38,10 @@ export default function RevenueOptimization() {
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-coastal-900 mb-6">
               Maximize Your Revenue
             </h2>
-            <p className="text-lg text-slate-600 mb-8">
+            <p className="text-lg text-coastal-600 mb-8">
               Strategic pricing, optimized listings, and seamless operations combine
               to transform your property into a high-performing income stream.
             </p>
@@ -55,14 +55,14 @@ export default function RevenueOptimization() {
                 'Turnaround speed that reduces vacancy',
               ].map((item, i) => (
                 <li key={i} className="flex gap-3 items-start">
-                  <span className="text-amber-600 font-bold mt-1">✓</span>
-                  <span className="text-slate-700">{item}</span>
+                  <span className="text-coastal-500 font-bold mt-1">✓</span>
+                  <span className="text-coastal-700">{item}</span>
                 </li>
               ))}
             </ul>
 
             <a href="/services">
-              <button className="px-6 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors font-semibold">
+              <button className="px-6 py-3 bg-coastal-500 text-white rounded-lg hover:bg-coastal-600 transition-colors font-semibold">
                 Explore Full Services
               </button>
             </a>
@@ -81,13 +81,13 @@ export default function RevenueOptimization() {
               return (
                 <div
                   key={index}
-                  className="p-6 bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-lg transition-shadow"
+                  className="p-6 bg-white rounded-xl border border-coastal-200 shadow-sm hover:shadow-lg transition-shadow"
                 >
-                  <Icon className="w-10 h-10 text-amber-600 mb-3" />
-                  <p className="text-3xl font-bold text-slate-900 mb-1">
+                  <Icon className="w-10 h-10 text-coastal-500 mb-3" />
+                  <p className="text-3xl font-bold text-coastal-900 mb-1">
                     {stat.value}
                   </p>
-                  <p className="text-sm text-slate-600">{stat.label}</p>
+                  <p className="text-sm text-coastal-600">{stat.label}</p>
                 </div>
               );
             })}

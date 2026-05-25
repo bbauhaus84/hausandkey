@@ -12,17 +12,17 @@ export default function About() {
       <Navbar />
       <main className="relative overflow-hidden">
         {/* Hero Section */}
-        <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-white via-white to-slate-50">
+        <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-coastal-50 via-coastal-50 to-coastal-100">
           <div className="max-w-6xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
             >
-              <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
+              <h1 className="text-5xl md:text-6xl font-bold text-coastal-900 mb-6">
                 Passion for Hospitality, Expertise in Operations
               </h1>
-              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              <p className="text-xl text-coastal-600 max-w-3xl mx-auto">
                 Built on 287+ stays, 15+ years of professional experience, and a genuine love for helping property owners succeed.
               </p>
             </motion.div>
@@ -40,17 +40,17 @@ export default function About() {
               className="space-y-8"
             >
               <div>
-                <h2 className="text-4xl font-bold text-slate-900 mb-6">The Haus & Key Story</h2>
-                <p className="text-lg text-slate-700 leading-relaxed mb-4">
+                <h2 className="text-4xl font-bold text-coastal-900 mb-6">The Haus & Key Story</h2>
+                <p className="text-lg text-coastal-700 leading-relaxed mb-4">
                   I started as a property owner myself, managing my own boutique studio attached to my house. Over 287 stays, I learned that exceptional hospitality comes from genuine care, attention to detail, and fast communication. My guests consistently praised our communication, cleanliness, ease of check-in, detailed instructions, comfortable accommodations, and how true the listing was to reality.
                 </p>
-                <p className="text-lg text-slate-700 leading-relaxed mb-4">
+                <p className="text-lg text-coastal-700 leading-relaxed mb-4">
                   But I fell in love with the entire process—not just owning a property, but the careful coordination, guest experience design, and revenue optimization that makes a rental thrive. That passion led me to start Haus & Key: a co-hosting service for owners who share my values but lack the time (or desire) to handle everything themselves.
                 </p>
               </div>
 
               <div className="border-t-2 border-amber-200 pt-8">
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">What I Do Best</h3>
+                <h3 className="text-2xl font-bold text-coastal-900 mb-6">What I Do Best</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {[
                     {
@@ -80,10 +80,10 @@ export default function About() {
                   ].map((item, index) => {
                     const Icon = item.icon;
                     return (
-                      <div key={index} className="p-6 rounded-lg bg-amber-50 border border-amber-100">
-                        <Icon className="w-8 h-8 text-amber-600 mb-3" />
-                        <h4 className="font-semibold text-slate-900 mb-2">{item.title}</h4>
-                        <p className="text-slate-700 text-sm leading-relaxed">{item.description}</p>
+                      <div key={index} className="p-6 rounded-lg bg-coastal-50 border border-coastal-100">
+                        <Icon className="w-8 h-8 text-coastal-500 mb-3" />
+                        <h4 className="font-semibold text-coastal-900 mb-2">{item.title}</h4>
+                        <p className="text-coastal-700 text-sm leading-relaxed">{item.description}</p>
                       </div>
                     );
                   })}
@@ -91,8 +91,8 @@ export default function About() {
               </div>
 
               <div className="border-t-2 border-amber-200 pt-8">
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">Who I Partner With</h3>
-                <p className="text-lg text-slate-700 leading-relaxed mb-4">
+                <h3 className="text-2xl font-bold text-coastal-900 mb-6">Who I Partner With</h3>
+                <p className="text-lg text-coastal-700 leading-relaxed mb-4">
                   I work with property owners who are:
                 </p>
                 <ul className="space-y-3 mb-6">
@@ -103,29 +103,29 @@ export default function About() {
                     'Committed to quality—owners who value excellence and are willing to invest in it',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <span className="text-amber-600 font-bold mt-1">✓</span>
-                      <span className="text-slate-700">{item}</span>
+                      <span className="text-coastal-500 font-bold mt-1">✓</span>
+                      <span className="text-coastal-700">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               <div className="border-t-2 border-amber-200 pt-8">
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">My Professional Background</h3>
+                <h3 className="text-2xl font-bold text-coastal-900 mb-6">My Professional Background</h3>
                 <div className="p-6 rounded-lg bg-slate-100">
-                  <p className="text-slate-700 text-lg leading-relaxed">
+                  <p className="text-coastal-700 text-lg leading-relaxed">
                     With 15+ years of professional experience in <strong>project management, editorial, production, customer experience, and operations</strong>, I've built a career on managing complex workflows, delivering quality at scale, and understanding what exceptional customer care looks like.
                   </p>
-                  <p className="text-slate-700 text-lg leading-relaxed mt-4">
+                  <p className="text-coastal-700 text-lg leading-relaxed mt-4">
                     That foundation directly translates to boutique hosting: coordinating vendors, managing timelines, anticipating guest needs, and optimizing every process.
                   </p>
                 </div>
               </div>
 
               <div className="border-t-2 border-amber-200 pt-8">
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">Our Promise</h3>
-                <div className="p-8 rounded-lg bg-gradient-to-br from-amber-50 to-white border-2 border-amber-200">
-                  <p className="text-lg text-slate-900 font-semibold mb-4">
+                <h3 className="text-2xl font-bold text-coastal-900 mb-6">Our Promise</h3>
+                <div className="p-8 rounded-lg bg-gradient-to-br from-coastal-50 to-white border-2 border-amber-200">
+                  <p className="text-lg text-coastal-900 font-semibold mb-4">
                     Haus & Key isn't just a co-hosting service—it's a partnership.
                   </p>
                   <ul className="space-y-3">
@@ -137,8 +137,8 @@ export default function About() {
                       'Peace of mind that your property is cared for like our own',
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-3">
-                        <Heart className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-slate-700">{item}</span>
+                        <Heart className="w-5 h-5 text-coastal-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-coastal-700">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -146,7 +146,7 @@ export default function About() {
               </div>
 
               <div className="border-t-2 border-amber-200 pt-8">
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">By the Numbers</h3>
+                <h3 className="text-2xl font-bold text-coastal-900 mb-6">By the Numbers</h3>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                   {[
                     { number: '287+', label: 'Stays Hosted' },
@@ -154,9 +154,9 @@ export default function About() {
                     { number: '100%', label: 'Response Rate' },
                     { number: '∞', label: 'Care & Passion' },
                   ].map((stat, i) => (
-                    <div key={i} className="text-center p-6 rounded-lg bg-amber-50 border border-amber-100">
-                      <p className="text-4xl font-bold text-amber-600 mb-2">{stat.number}</p>
-                      <p className="text-slate-700 font-medium">{stat.label}</p>
+                    <div key={i} className="text-center p-6 rounded-lg bg-coastal-50 border border-coastal-100">
+                      <p className="text-4xl font-bold text-coastal-500 mb-2">{stat.number}</p>
+                      <p className="text-coastal-700 font-medium">{stat.label}</p>
                     </div>
                   ))}
                 </div>
@@ -166,7 +166,7 @@ export default function About() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+        <section className="py-20 px-4 bg-gradient-to-br from-coastal-900 to-coastal-800 text-white">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -179,7 +179,7 @@ export default function About() {
                 If you're a property owner who values hospitality, excellence, and a genuine partnership—let's talk about how I can help your rental thrive.
               </p>
               <Link href="/contact">
-                <button className="px-8 py-4 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-700 transition-colors">
+                <button className="px-8 py-4 bg-coastal-500 text-white rounded-lg font-semibold hover:bg-coastal-600 transition-colors">
                   Schedule a Consultation
                 </button>
               </Link>

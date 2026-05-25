@@ -8,14 +8,29 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        sand: '#f7f2ed',
-        warm: '#9f7d64',
-        slate: '#324048',
-        soft: '#e8e3dd',
-        accent: '#b5835a',
+        coastal: {
+          50: '#f8fafb',
+          100: '#f0f5f7',
+          200: '#dce8ed',
+          300: '#c7dce4',
+          400: '#5eb3cc',
+          500: '#4a9bb8',
+          600: '#2b7fa0',
+          700: '#1f5f7a',
+          800: '#154455',
+          900: '#0f2f3a',
+        },
+        sand: '#f8fafb',
+        coral: '#d97766',
+        sage: '#2ba89f',
       },
       boxShadow: {
-        soft: '0 24px 70px rgba(50, 64, 72, 0.12)',
+        soft: '0 8px 32px rgba(75, 155, 184, 0.1)',
+        card: '0 4px 16px rgba(75, 155, 184, 0.08)',
+      },
+      fontFamily: {
+        display: ['Georgia', 'serif'],
+        body: ['Inter', 'sans-serif'],
       },
     },
   },

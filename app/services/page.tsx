@@ -72,17 +72,17 @@ export default function Services() {
       <Navbar />
       <main className="relative overflow-hidden">
         {/* Hero Section */}
-        <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-white via-white to-slate-50">
+        <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-coastal-50 via-coastal-50 to-coastal-100">
           <div className="max-w-6xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
             >
-              <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
+              <h1 className="text-5xl md:text-6xl font-bold text-coastal-900 mb-6">
                 Full-Service Airbnb Management
               </h1>
-              <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
+              <p className="text-xl text-coastal-600 max-w-3xl mx-auto mb-8">
                 From listing launch to guest delight, we handle every detail so your property
                 performs at its best. Transparent, personalized, and boutique-quality service.
               </p>
@@ -103,13 +103,13 @@ export default function Services() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.05 }}
                     viewport={{ once: true }}
-                    className="p-8 rounded-xl border border-slate-200 hover:border-amber-300 hover:shadow-lg transition-all bg-slate-50 hover:bg-white"
+                    className="p-8 rounded-xl border border-coastal-200 hover:border-coastal-300 hover:shadow-lg transition-all bg-coastal-50 hover:bg-white"
                   >
-                    <Icon className="w-12 h-12 text-amber-600 mb-4" />
-                    <h3 className="text-2xl font-semibold text-slate-900 mb-3">
+                    <Icon className="w-12 h-12 text-coastal-500 mb-4" />
+                    <h3 className="text-2xl font-semibold text-coastal-900 mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-slate-600 leading-relaxed">
+                    <p className="text-coastal-600 leading-relaxed">
                       {service.description}
                     </p>
                   </motion.div>
@@ -120,7 +120,7 @@ export default function Services() {
         </section>
 
         {/* How We Work Section */}
-        <section className="py-20 px-4 bg-gradient-to-br from-slate-50 to-white">
+        <section className="py-20 px-4 bg-gradient-to-br from-coastal-50 to-white">
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -129,10 +129,10 @@ export default function Services() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold text-coastal-900 mb-4">
                 Your Dedicated Co-Hosting Partner
               </h2>
-              <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              <p className="text-xl text-coastal-600 max-w-2xl mx-auto">
                 We personally handle all operations so you don't have to.
               </p>
             </motion.div>
@@ -173,16 +173,16 @@ export default function Services() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="p-8 rounded-xl bg-white border border-slate-200"
+                  className="p-8 rounded-xl bg-white border border-coastal-200"
                 >
-                  <h3 className="text-2xl font-semibold text-slate-900 mb-6">
+                  <h3 className="text-2xl font-semibold text-coastal-900 mb-6">
                     {section.title}
                   </h3>
                   <ul className="space-y-4">
                     {section.items.map((item, i) => (
                       <li key={i} className="flex items-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-amber-600 mt-1 flex-shrink-0" />
-                        <span className="text-slate-700">{item}</span>
+                        <CheckCircle className="w-5 h-5 text-coastal-500 mt-1 flex-shrink-0" />
+                        <span className="text-coastal-700">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -193,7 +193,7 @@ export default function Services() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4 bg-gradient-to-br from-amber-50 to-white">
+        <section className="py-20 px-4 bg-gradient-to-br from-coastal-50 to-white">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -201,14 +201,14 @@ export default function Services() {
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold text-slate-900 mb-6">
+              <h2 className="text-4xl font-bold text-coastal-900 mb-6">
                 Ready to transform your property?
               </h2>
-              <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
+              <p className="text-lg text-coastal-600 mb-8 max-w-2xl mx-auto">
                 Schedule a free consultation to discuss your property's goals and how we can help you succeed.
               </p>
               <Link href="/contact">
-                <button className="px-8 py-4 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-700 transition-colors">
+                <button className="px-8 py-4 bg-coastal-500 text-white rounded-lg font-semibold hover:bg-coastal-600 transition-colors">
                   Schedule a Consultation
                 </button>
               </Link>

@@ -11,17 +11,17 @@ export default function Contact() {
       <Navbar />
       <main className="relative overflow-hidden">
         {/* Hero Section */}
-        <section className="pt-32 pb-12 px-4 bg-gradient-to-br from-white via-white to-slate-50">
+        <section className="pt-32 pb-12 px-4 bg-gradient-to-br from-coastal-50 via-coastal-50 to-coastal-100">
           <div className="max-w-6xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
             >
-              <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
+              <h1 className="text-5xl md:text-6xl font-bold text-coastal-900 mb-6">
                 Let's Talk About Your Property
               </h1>
-              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              <p className="text-xl text-coastal-600 max-w-3xl mx-auto">
                 Ready to explore how Haus & Key can help you succeed? Fill out the form below or reach out directly. We typically respond within 24 hours.
               </p>
             </motion.div>
@@ -36,7 +36,7 @@ export default function Contact() {
         </section>
 
         {/* Service Area Section */}
-        <section className="py-20 px-4 bg-gradient-to-br from-slate-50 to-white">
+        <section className="py-20 px-4 bg-gradient-to-br from-coastal-50 to-white">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -44,14 +44,14 @@ export default function Contact() {
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">
+              <h2 className="text-3xl font-bold text-coastal-900 mb-4">
                 Area of Service
               </h2>
-              <p className="text-lg text-slate-600 mb-6">
+              <p className="text-lg text-coastal-600 mb-6">
                 We primarily serve the local area and are open to discussing select out-of-area properties on a case-by-case basis. Reach out to see if we're a good fit for your specific situation.
               </p>
               <div className="p-8 rounded-lg bg-white border-2 border-amber-200">
-                <p className="text-slate-700 text-lg leading-relaxed">
+                <p className="text-coastal-700 text-lg leading-relaxed">
                   No matter where your property is located, we welcome the conversation. Our portfolio includes diverse property types and markets—let's explore how we can help.
                 </p>
               </div>
@@ -68,19 +68,19 @@ export default function Contact() {
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">
+              <h2 className="text-3xl font-bold text-coastal-900 mb-12 text-center">
                 Before You Contact Us
               </h2>
 
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-2xl font-semibold text-slate-900 mb-3">
+                  <h3 className="text-2xl font-semibold text-coastal-900 mb-3">
                     What should I prepare?
                   </h3>
-                  <p className="text-slate-700 leading-relaxed mb-4">
+                  <p className="text-coastal-700 leading-relaxed mb-4">
                     Have the following handy for our initial conversation:
                   </p>
-                  <ul className="space-y-2 text-slate-700 ml-4">
+                  <ul className="space-y-2 text-coastal-700 ml-4">
                     <li>• Property type and size (studio, 1BR, etc.)</li>
                     <li>• Current occupancy rate or booking frequency</li>
                     <li>• Whether you're currently listed on Airbnb, VRBO, or both</li>
@@ -89,29 +89,29 @@ export default function Contact() {
                   </ul>
                 </div>
 
-                <div className="border-t border-slate-200 pt-8">
-                  <h3 className="text-2xl font-semibold text-slate-900 mb-3">
+                <div className="border-t border-coastal-200 pt-8">
+                  <h3 className="text-2xl font-semibold text-coastal-900 mb-3">
                     How quickly can we get started?
                   </h3>
-                  <p className="text-slate-700 leading-relaxed">
+                  <p className="text-coastal-700 leading-relaxed">
                     After an initial consultation, we can typically begin onboarding within 48 hours and launch your optimized listing within one week. Every property is unique, so timeline and scope are customized to your needs.
                   </p>
                 </div>
 
-                <div className="border-t border-slate-200 pt-8">
-                  <h3 className="text-2xl font-semibold text-slate-900 mb-3">
+                <div className="border-t border-coastal-200 pt-8">
+                  <h3 className="text-2xl font-semibold text-coastal-900 mb-3">
                     Do you work with multiple properties?
                   </h3>
-                  <p className="text-slate-700 leading-relaxed">
+                  <p className="text-coastal-700 leading-relaxed">
                     Absolutely. We work with owners who have one property or many. Each gets personalized strategy and dedicated attention.
                   </p>
                 </div>
 
-                <div className="border-t border-slate-200 pt-8">
-                  <h3 className="text-2xl font-semibold text-slate-900 mb-3">
+                <div className="border-t border-coastal-200 pt-8">
+                  <h3 className="text-2xl font-semibold text-coastal-900 mb-3">
                     What's the next step after I submit this form?
                   </h3>
-                  <p className="text-slate-700 leading-relaxed">
+                  <p className="text-coastal-700 leading-relaxed">
                     We'll review your submission and reach out within 24 hours to discuss your property, goals, and timeline. If it's a good fit, we'll schedule a consultation call to explore how we can help.
                   </p>
                 </div>

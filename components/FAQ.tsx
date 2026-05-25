@@ -45,10 +45,10 @@ export default function FAQ() {
       <div className="max-w-3xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-coastal-900 mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-slate-600">
+          <p className="text-lg text-coastal-600">
             Got questions? We've got answers. Still curious? Let's chat.
           </p>
         </div>
@@ -62,13 +62,13 @@ export default function FAQ() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="border border-slate-200 rounded-lg overflow-hidden hover:border-amber-300 transition-colors"
+              className="border border-coastal-200 rounded-lg overflow-hidden hover:border-coastal-300 transition-colors"
             >
               <button
                 onClick={() =>
                   setExpandedIndex(expandedIndex === index ? null : index)
                 }
-                className="w-full px-6 py-4 text-left font-semibold text-slate-900 flex justify-between items-center hover:bg-slate-50 transition-colors"
+                className="w-full px-6 py-4 text-left font-semibold text-coastal-900 flex justify-between items-center hover:bg-coastal-50 transition-colors"
               >
                 {faq.question}
                 <motion.div
@@ -77,7 +77,7 @@ export default function FAQ() {
                   }}
                   transition={{ duration: 0.3 }}
                 >
-                  <ChevronDown size={20} className="text-amber-600" />
+                  <ChevronDown size={20} className="text-coastal-500" />
                 </motion.div>
               </button>
 
@@ -88,9 +88,9 @@ export default function FAQ() {
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="border-t border-slate-200 bg-slate-50"
+                    className="border-t border-coastal-200 bg-coastal-50"
                   >
-                    <p className="px-6 py-4 text-slate-700">{faq.answer}</p>
+                    <p className="px-6 py-4 text-coastal-700">{faq.answer}</p>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -106,9 +106,9 @@ export default function FAQ() {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <p className="text-slate-600 mb-4">Don't see your question?</p>
+          <p className="text-coastal-600 mb-4">Don't see your question?</p>
           <a href="/contact">
-            <button className="px-6 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors font-semibold">
+            <button className="px-6 py-3 bg-coastal-500 text-white rounded-lg hover:bg-coastal-600 transition-colors font-semibold">
               Get in Touch
             </button>
           </a>

@@ -49,10 +49,10 @@ export default function Testimonials() {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-coastal-900 mb-4">
             What Property Owners Say
           </h2>
-          <p className="text-xl text-slate-600">
+          <p className="text-xl text-coastal-600">
             Real feedback from hosts who trust us with their properties
           </p>
         </div>
@@ -69,7 +69,7 @@ export default function Testimonials() {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="p-8 rounded-xl border border-slate-200 bg-slate-50 hover:shadow-lg transition-shadow"
+              className="p-8 rounded-xl border border-coastal-200 bg-coastal-50 hover:shadow-lg transition-shadow"
             >
               {/* Stars */}
               <div className="flex gap-1 mb-4">
@@ -77,18 +77,18 @@ export default function Testimonials() {
                   <Star
                     key={i}
                     size={18}
-                    className="fill-amber-400 text-amber-400"
+                    className="fill-coastal-400 text-amber-400"
                   />
                 ))}
               </div>
 
               {/* Quote */}
-              <p className="text-slate-700 mb-6 italic">"{testimonial.text}"</p>
+              <p className="text-coastal-700 mb-6 italic">"{testimonial.text}"</p>
 
               {/* Author */}
               <div>
-                <p className="font-semibold text-slate-900">{testimonial.name}</p>
-                <p className="text-sm text-slate-600">{testimonial.title}</p>
+                <p className="font-semibold text-coastal-900">{testimonial.name}</p>
+                <p className="text-sm text-coastal-600">{testimonial.title}</p>
               </div>
             </motion.div>
           ))}

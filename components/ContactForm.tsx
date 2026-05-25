@@ -40,19 +40,19 @@ export default function ContactForm() {
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-3xl font-bold text-slate-900 mb-8">Get in Touch</h2>
+        <h2 className="text-3xl font-bold text-coastal-900 mb-8">Get in Touch</h2>
 
         <div className="space-y-8">
           {/* Email */}
           <div className="flex gap-4">
             <div className="flex-shrink-0">
-              <Mail className="w-6 h-6 text-amber-600 mt-1" />
+              <Mail className="w-6 h-6 text-coastal-500 mt-1" />
             </div>
             <div>
-              <h3 className="font-semibold text-slate-900 mb-1">Email</h3>
+              <h3 className="font-semibold text-coastal-900 mb-1">Email</h3>
               <a
                 href="mailto:hello@hausandkey.com"
-                className="text-slate-600 hover:text-amber-600 transition-colors"
+                className="text-coastal-600 hover:text-coastal-500 transition-colors"
               >
                 hello@hausandkey.com
               </a>
@@ -62,33 +62,33 @@ export default function ContactForm() {
           {/* Phone */}
           <div className="flex gap-4">
             <div className="flex-shrink-0">
-              <Phone className="w-6 h-6 text-amber-600 mt-1" />
+              <Phone className="w-6 h-6 text-coastal-500 mt-1" />
             </div>
             <div>
-              <h3 className="font-semibold text-slate-900 mb-1">Phone</h3>
-              <p className="text-slate-600">Available on request</p>
+              <h3 className="font-semibold text-coastal-900 mb-1">Phone</h3>
+              <p className="text-coastal-600">Available on request</p>
             </div>
           </div>
 
           {/* Location */}
           <div className="flex gap-4">
             <div className="flex-shrink-0">
-              <MapPin className="w-6 h-6 text-amber-600 mt-1" />
+              <MapPin className="w-6 h-6 text-coastal-500 mt-1" />
             </div>
             <div>
-              <h3 className="font-semibold text-slate-900 mb-1">Service Area</h3>
-              <p className="text-slate-600">
+              <h3 className="font-semibold text-coastal-900 mb-1">Service Area</h3>
+              <p className="text-coastal-600">
                 Primarily serving the local market, with options for select out-of-area properties.
               </p>
             </div>
           </div>
 
           {/* Availability */}
-          <div className="mt-12 p-6 bg-amber-50 rounded-lg border border-amber-200">
-            <p className="text-slate-900 font-semibold mb-2">
+          <div className="mt-12 p-6 bg-coastal-50 rounded-lg border border-amber-200">
+            <p className="text-coastal-900 font-semibold mb-2">
               Ready to discuss your property?
             </p>
-            <p className="text-slate-700 text-sm">
+            <p className="text-coastal-700 text-sm">
               We typically respond within 24 hours. Let's explore how we can help you succeed.
             </p>
           </div>
@@ -105,7 +105,7 @@ export default function ContactForm() {
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Name */}
           <div>
-            <label htmlFor="name" className="block text-sm font-semibold text-slate-900 mb-2">
+            <label htmlFor="name" className="block text-sm font-semibold text-coastal-900 mb-2">
               Name
             </label>
             <input
@@ -115,14 +115,14 @@ export default function ContactForm() {
               value={formState.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:border-amber-600 focus:ring-2 focus:ring-amber-100 transition-all"
+              className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:border-coastal-500 focus:ring-2 focus:ring-coastal-100 transition-all"
               placeholder="Your name"
             />
           </div>
 
           {/* Email */}
           <div>
-            <label htmlFor="email" className="block text-sm font-semibold text-slate-900 mb-2">
+            <label htmlFor="email" className="block text-sm font-semibold text-coastal-900 mb-2">
               Email
             </label>
             <input
@@ -132,14 +132,14 @@ export default function ContactForm() {
               value={formState.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:border-amber-600 focus:ring-2 focus:ring-amber-100 transition-all"
+              className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:border-coastal-500 focus:ring-2 focus:ring-coastal-100 transition-all"
               placeholder="your@email.com"
             />
           </div>
 
           {/* Phone */}
           <div>
-            <label htmlFor="phone" className="block text-sm font-semibold text-slate-900 mb-2">
+            <label htmlFor="phone" className="block text-sm font-semibold text-coastal-900 mb-2">
               Phone (Optional)
             </label>
             <input
@@ -148,14 +148,14 @@ export default function ContactForm() {
               name="phone"
               value={formState.phone}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:border-amber-600 focus:ring-2 focus:ring-amber-100 transition-all"
+              className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:border-coastal-500 focus:ring-2 focus:ring-coastal-100 transition-all"
               placeholder="Your phone number"
             />
           </div>
 
           {/* Message */}
           <div>
-            <label htmlFor="message" className="block text-sm font-semibold text-slate-900 mb-2">
+            <label htmlFor="message" className="block text-sm font-semibold text-coastal-900 mb-2">
               Message
             </label>
             <textarea
@@ -165,7 +165,7 @@ export default function ContactForm() {
               onChange={handleChange}
               required
               rows={5}
-              className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:border-amber-600 focus:ring-2 focus:ring-amber-100 transition-all resize-none"
+              className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:border-coastal-500 focus:ring-2 focus:ring-coastal-100 transition-all resize-none"
               placeholder="Tell us about your property and what you're looking for..."
             />
           </div>
@@ -173,7 +173,7 @@ export default function ContactForm() {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full px-6 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-700 transition-colors flex items-center justify-center gap-2"
+            className="w-full px-6 py-3 bg-coastal-500 text-white rounded-lg font-semibold hover:bg-coastal-600 transition-colors flex items-center justify-center gap-2"
           >
             <Send size={20} />
             Send Message
