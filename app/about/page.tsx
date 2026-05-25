@@ -19,11 +19,11 @@ export default function About() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
             >
-              <h1 className="text-5xl md:text-6xl font-bold text-coastal-900 mb-6">
-                Passion for Hospitality, Expertise in Operations
+              <h1 className="text-5xl md:text-6xl font-display font-bold text-coastal-900 mb-6">
+                Hi, I'm Here to Help
               </h1>
-              <p className="text-xl text-coastal-600 max-w-3xl mx-auto">
-                Built on 287+ stays, 15+ years of professional experience, and a genuine love for helping property owners succeed.
+              <p className="text-xl text-coastal-600 max-w-3xl mx-auto leading-relaxed">
+                I've hosted 287+ stays, managed properties for 15+ years, and learned that great hosting is about genuine care. Your property deserves someone who gets that.
               </p>
             </motion.div>
           </div>

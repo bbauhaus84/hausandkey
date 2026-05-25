@@ -18,11 +18,11 @@ export default function Contact() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
             >
-              <h1 className="text-5xl md:text-6xl font-bold text-coastal-900 mb-6">
-                Let's Talk About Your Property
+              <h1 className="text-5xl md:text-6xl font-display font-bold text-coastal-900 mb-6">
+                Let's Chat
               </h1>
-              <p className="text-xl text-coastal-600 max-w-3xl mx-auto">
-                Ready to explore how Haus & Key can help you succeed? Fill out the form below or reach out directly. We typically respond within 24 hours.
+              <p className="text-xl text-coastal-600 max-w-3xl mx-auto leading-relaxed">
+                Tell me about your property, your goals, and what's on your mind. I respond within 24 hours—personally.
               </p>
             </motion.div>
           </div>

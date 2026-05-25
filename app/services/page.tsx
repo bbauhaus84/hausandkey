@@ -1,70 +1,10 @@
 'use client';
-// Services Page - Detailed description of all services offered
+// Services Page - Simple, clear service tiers
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import SimpleServices from '@/components/SimpleServices';
 import { motion } from 'framer-motion';
-import {
-  CheckCircle,
-  MessageCircle,
-  Sparkles,
-  BarChart,
-  Calendar,
-  Star,
-  Hammer,
-  Phone,
-} from 'lucide-react';
 import Link from 'next/link';
-
-const services = [
-  {
-    icon: Sparkles,
-    title: 'Listing Setup & Optimization',
-    description:
-      'We craft high-converting listings with professional copywriting, photography guidance, and SEO optimization to help your property stand out and attract quality guests.',
-  },
-  {
-    icon: MessageCircle,
-    title: 'Guest Communication',
-    description:
-      'Fast, warm, and professional responses to inquiries, booking questions, and guest messages. We handle every conversation with hospitality-first care.',
-  },
-  {
-    icon: Hammer,
-    title: 'Cleaning Coordination',
-    description:
-      'We manage the entire turnover process—scheduling vetted cleaners, conducting quality checks, and ensuring your property is immaculate between guests.',
-  },
-  {
-    icon: BarChart,
-    title: 'Dynamic Pricing',
-    description:
-      'Smart pricing strategies that adapt to seasonality, local demand, and market trends. Maximize occupancy and nightly income without leaving money on the table.',
-  },
-  {
-    icon: Calendar,
-    title: 'Calendar Management',
-    description:
-      'Seamless synchronization across Airbnb, VRBO, and other platforms. Prevents double-bookings and minimizes vacancy gaps between stays.',
-  },
-  {
-    icon: Star,
-    title: 'Review Management',
-    description:
-      'We actively monitor and respond to guest reviews professionally. Positive reviews drive more bookings—we make sure your property shines online.',
-  },
-  {
-    icon: Phone,
-    title: 'Check-in/Check-out Support',
-    description:
-      'Coordinated arrival and departure experiences. Clear instructions, smooth transitions, and problem-solving for a flawless guest experience.',
-  },
-  {
-    icon: Hammer,
-    title: 'Property Care Oversight',
-    description:
-      'Regular property inspections, vendor coordination, and proactive maintenance. Your space stays guest-ready and protected year-round.',
-  },
-];
 
 export default function Services() {
   return (
@@ -79,121 +19,53 @@ export default function Services() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
             >
-              <h1 className="text-5xl md:text-6xl font-bold text-coastal-900 mb-6">
-                Full-Service Airbnb Management
+              <h1 className="text-5xl md:text-6xl font-display font-bold text-coastal-900 mb-6">
+                How I Can Help
               </h1>
-              <p className="text-xl text-coastal-600 max-w-3xl mx-auto mb-8">
-                From listing launch to guest delight, we handle every detail so your property
-                performs at its best. Transparent, personalized, and boutique-quality service.
+              <p className="text-xl text-coastal-600 max-w-3xl mx-auto leading-relaxed">
+                Three simple ways to work with me. Choose what fits your life, your property, and your goals.
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Services Grid */}
-        <section className="py-20 px-4 bg-white">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-              {services.map((service, index) => {
-                const Icon = service.icon;
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.05 }}
-                    viewport={{ once: true }}
-                    className="p-8 rounded-xl border border-coastal-200 hover:border-coastal-300 hover:shadow-lg transition-all bg-coastal-50 hover:bg-white"
-                  >
-                    <Icon className="w-12 h-12 text-coastal-500 mb-4" />
-                    <h3 className="text-2xl font-semibold text-coastal-900 mb-3">
-                      {service.title}
-                    </h3>
-                    <p className="text-coastal-600 leading-relaxed">
-                      {service.description}
-                    </p>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
+        {/* Services */}
+        <SimpleServices />
 
-        {/* How We Work Section */}
-        <section className="py-20 px-4 bg-gradient-to-br from-coastal-50 to-white">
-          <div className="max-w-6xl mx-auto">
+        {/* What's Included Across All Tiers */}
+        <section className="py-24 px-4 bg-white">
+          <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
-              className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-coastal-900 mb-4">
-                Your Dedicated Co-Hosting Partner
+              <h2 className="text-4xl font-display font-bold text-coastal-900 mb-8 text-center">
+                No Matter Which Tier, You Get
               </h2>
-              <p className="text-xl text-coastal-600 max-w-2xl mx-auto">
-                We personally handle all operations so you don't have to.
-              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {[
+                  'Direct access to me (calls, texts, emails)',
+                  'Quick response times (usually same day)',
+                  'Local expertise about our market',
+                  'Transparent communication & updates',
+                  'Genuine care for your property',
+                  'Flexible arrangements that work for you',
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <span className="text-coastal-500 font-bold text-lg mt-0.5">✓</span>
+                    <p className="text-coastal-700 font-medium">{item}</p>
+                  </div>
+                ))}
+              </div>
             </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: 'Personal Attention',
-                  items: [
-                    'Dedicated property management',
-                    'Owner communication & updates',
-                    'Guest feedback integration',
-                    'Continuous optimization',
-                  ],
-                },
-                {
-                  title: 'Professional Service',
-                  items: [
-                    'Fast response times',
-                    'Problem-solving expertise',
-                    'Guest experience focus',
-                    'Transparent reporting',
-                  ],
-                },
-                {
-                  title: 'Revenue Growth',
-                  items: [
-                    'Dynamic pricing strategy',
-                    'Listing optimization',
-                    'Occupancy maximization',
-                    'Performance analytics',
-                  ],
-                },
-              ].map((section, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="p-8 rounded-xl bg-white border border-coastal-200"
-                >
-                  <h3 className="text-2xl font-semibold text-coastal-900 mb-6">
-                    {section.title}
-                  </h3>
-                  <ul className="space-y-4">
-                    {section.items.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-coastal-500 mt-1 flex-shrink-0" />
-                        <span className="text-coastal-700">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 px-4 bg-gradient-to-br from-coastal-50 to-white">
+        {/* CTA */}
+        <section className="py-20 px-4 bg-coastal-50">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -201,15 +73,15 @@ export default function Services() {
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold text-coastal-900 mb-6">
-                Ready to transform your property?
+              <h2 className="text-3xl font-display font-bold text-coastal-900 mb-6">
+                Ready to Pick a Tier?
               </h2>
-              <p className="text-lg text-coastal-600 mb-8 max-w-2xl mx-auto">
-                Schedule a free consultation to discuss your property's goals and how we can help you succeed.
+              <p className="text-lg text-coastal-700 mb-8">
+                Let's talk about which option works best for you.
               </p>
               <Link href="/contact">
-                <button className="px-8 py-4 bg-coastal-500 text-white rounded-lg font-semibold hover:bg-coastal-600 transition-colors">
-                  Schedule a Consultation
+                <button className="px-8 py-4 bg-coastal-500 text-white rounded-lg font-semibold hover:bg-coastal-600 transition-colors button-glow">
+                  Get in Touch
                 </button>
               </Link>
             </motion.div>

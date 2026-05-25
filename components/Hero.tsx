@@ -51,8 +51,8 @@ export default function Hero() {
               variants={itemVariants}
               className="text-5xl md:text-6xl font-bold text-coastal-900 mb-6 leading-tight font-display"
             >
-              Your Santa Barbara Property,
-              <span className="block text-coastal-500">Beautifully Managed</span>
+              Let's Make Hosting
+              <span className="block text-coastal-500">Simple</span>
             </motion.h1>
 
             {/* Subheadline */}
@@ -60,7 +60,7 @@ export default function Hero() {
               variants={itemVariants}
               className="text-lg md:text-xl text-coastal-700 mb-10 leading-relaxed max-w-xl"
             >
-              Boutique co-hosting for owners who love their properties as much as their guests do. We blend genuine hospitality with expert operations—right here in Santa Barbara and Montecito.
+              I'm here to handle the heavy lifting—guest communication, pricing, cleaning coordination, and everything in between. You focus on what you love. Your property deserves someone who cares as much as you do.
             </motion.p>
 
             {/* CTA Buttons */}
