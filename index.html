@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haus & Key | Airbnb Co-Hosting in Coastal California</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sand:    #f5f0e8;
+      --sand-dk: #e8e0d0;
+      --cream:   #faf8f4;
+      --ocean:   #2d6a8a;
+      --ocean-lt:#3d8aaa;
+      --ocean-dk:#1e4f68;
+      --sage:    #7a9e87;
+      --slate:   #4a5568;
+      --dark:    #1a2332;
+      --white:   #ffffff;
+      --gold:    #c9a84c;
+      --radius:  12px;
+      --shadow:  0 4px 24px rgba(0,0,0,0.08);
+      --shadow-lg: 0 12px 48px rgba(0,0,0,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAVBAR ─────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(250, 248, 244, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: var(--shadow); }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .logo-badge {
+      width: 40px; height: 40px;
+      background: var(--ocean);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 16px; font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.5px;
+    }
+    .logo-text {
+      display: flex; flex-direction: column;
+    }
+    .logo-text .hk { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; color: var(--dark); line-height: 1.1; }
+    .logo-text .sub { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--ocean); font-weight: 500; }
+
+    .nav-links {
+      display: flex; align-items: center; gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 14px; font-weight: 500;
+      color: var(--slate);
+      transition: color 0.2s;
+      letter-spacing: 0.3px;
+    }
+    .nav-links a:hover { color: var(--ocean); }
+
+    .nav-cta {
+      background: var(--ocean);
+      color: var(--white) !important;
+      padding: 10px 22px;
+      border-radius: 6px;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--ocean-dk) !important; color: var(--white) !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column; gap: 5px;
+      cursor: pointer; border: none; background: none; padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--dark); border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* ── HERO ─────────────────────────────────── */
+    #home {
+      min-height: 100vh;
+      background:
+        linear-gradient(160deg, rgba(45,106,138,0.88) 0%, rgba(26,35,50,0.75) 100%),
+        url('montecito_pool.jpeg') center/cover no-repeat;
+      display: flex; align-items: center;
+      padding: 120px 2rem 80px;
+      position: relative;
+    }
+
+    .hero-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      width: 100%;
+      text-align: center;
+    }
+
+    .hero-content { color: var(--white); }
+
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 12px; font-weight: 500;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 1.5rem;
+    }
+    .hero-tag::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+    .hero-dot {
+      display: inline-block;
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      vertical-align: middle;
+      margin: 0 2px;
+    }
+
+    .hero-h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.5px;
+    }
+    .hero-h1 em { font-style: italic; color: var(--gold); }
+
+    .hero-p {
+      font-size: 1.1rem; font-weight: 300;
+      color: rgba(255,255,255,0.85);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.75;
+    }
+
+    .hero-btns {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px;
+      border-radius: 7px;
+      font-size: 15px; font-weight: 500;
+      text-decoration: none;
+      cursor: pointer; border: none;
+      transition: all 0.22s;
+      letter-spacing: 0.2px;
+    }
+    .btn-primary {
+      background: var(--white);
+      color: var(--ocean);
+    }
+    .btn-primary:hover { background: var(--sand); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.55);
+    }
+    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+
+    .hero-card {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(16px);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow-lg);
+    }
+    .hero-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+    .hero-card p {
+      font-size: 13px; color: var(--slate);
+      margin-bottom: 1.5rem; line-height: 1.55;
+    }
+    .card-stats {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1rem; margin-bottom: 1.5rem;
+    }
+    .card-stat {
+      background: var(--sand);
+      border-radius: 10px; padding: 1rem;
+      text-align: center;
+    }
+    .card-stat .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; font-weight: 700;
+      color: var(--ocean); line-height: 1;
+      margin-bottom: 2px;
+    }
+    .card-stat .lbl { font-size: 11px; color: var(--slate); letter-spacing: 0.5px; }
+
+    .card-form { display: flex; flex-direction: column; gap: 0.75rem; }
+    .card-form input, .card-form select {
+      width: 100%; padding: 12px 14px;
+      border: 1.5px solid var(--sand-dk);
+      border-radius: 7px;
+      font-family: 'Inter', sans-serif; font-size: 14px;
+      color: var(--dark); background: var(--white);
+      outline: none; transition: border 0.2s;
+    }
+    .card-form input:focus, .card-form select:focus { border-color: var(--ocean); }
+    .card-form .btn-ocean {
+      background: var(--ocean); color: var(--white);
+      justify-content: center; width: 100%;
+      padding: 13px;
+    }
+    .card-form .btn-ocean:hover { background: var(--ocean-dk); transform: translateY(-1px); }
+
+    /* ── STATS ─────────────────────────────────── */
+    #stats {
+      background: var(--white);
+      border-bottom: 1px solid var(--sand-dk);
+      padding: 0;
+    }
+    .stats-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      padding: 0 2rem;
+    }
+    .stat-item {
+      padding: 3rem 2rem;
+      text-align: center;
+      border-right: 1px solid var(--sand-dk);
+      transition: background 0.2s;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-item:hover { background: var(--cream); }
+    .stat-icon {
+      width: 48px; height: 48px;
+      background: var(--sand);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 22px;
+    }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem; font-weight: 700;
+      color: var(--ocean); line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .stat-label { font-size: 14px; color: var(--slate); font-weight: 500; }
+
+    /* ── SECTIONS COMMON ─────────────────────── */
+    section { padding: 100px 2rem; }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--ocean);
+      margin-bottom: 0.75rem;
+    }
+    .section-h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 600; line-height: 1.2;
+      color: var(--dark); margin-bottom: 1rem;
+    }
+    .section-p {
+      font-size: 1.05rem; color: var(--slate);
+      line-height: 1.75; max-width: 580px;
+    }
+
+    /* ── SERVICES ─────────────────────────────── */
+    #services { background: var(--sand); }
+    .services-header { text-align: center; margin-bottom: 3.5rem; }
+    .services-header .section-p { margin: 0 auto; }
+
+    .tiers {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .tier {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      transition: transform 0.25s, box-shadow 0.25s;
+      border: 2px solid transparent;
+      display: flex; flex-direction: column;
+    }
+    .tier:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--ocean);
+    }
+    .tier.popular {
+      border-color: var(--ocean);
+      transform: scale(1.02);
+    }
+    .tier.popular:hover { transform: scale(1.02) translateY(-4px); }
+
+    .popular-badge {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--ocean);
+      color: var(--white);
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 5px 16px; border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    .tier-name { font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sage); margin-bottom: 0.5rem; }
+    .tier-price {
+      display: flex; align-items: baseline; gap: 4px;
+      margin-bottom: 0.5rem;
+    }
+    .tier-price .pct {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem; font-weight: 700;
+      color: var(--dark); line-height: 1;
+    }
+    .tier-price .pct-sym { font-size: 1.5rem; font-weight: 600; color: var(--ocean); }
+    .tier-price-note { font-size: 12px; color: var(--slate); margin-bottom: 1.5rem; }
+
+    .tier-desc { font-size: 14px; color: var(--slate); line-height: 1.6; margin-bottom: 1.5rem; }
+
+    .tier-features { list-style: none; flex: 1; margin-bottom: 2rem; }
+    .tier-features li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 14px; color: var(--dark); padding: 6px 0;
+      border-bottom: 1px solid var(--sand);
+    }
+    .tier-features li:last-child { border-bottom: none; }
+    .tier-features li::before {
+      content: '✓';
+      flex-shrink: 0;
+      width: 20px; height: 20px;
+      background: var(--sage);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; color: var(--white); font-weight: 700;
+      margin-top: 1px;
+    }
+
+    .tier .btn-tier {
+      display: block; text-align: center;
+      padding: 13px; border-radius: 7px;
+      font-size: 14px; font-weight: 500;
+      text-decoration: none;
+      background: var(--sand);
+      color: var(--ocean);
+      transition: all 0.2s;
+    }
+    .tier .btn-tier:hover, .tier.popular .btn-tier {
+      background: var(--ocean); color: var(--white);
+    }
+    .tier.popular .btn-tier:hover { background: var(--ocean-dk); }
+
+    /* ── AREAS ──────────────────────────────────── */
+    #areas { background: var(--white); }
+    .areas-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+    }
+    .area-cards { display: flex; flex-direction: column; gap: 1rem; }
+    .area-card {
+      display: flex; align-items: center; gap: 1.25rem;
+      background: var(--cream);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      border-left: 4px solid var(--ocean);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .area-card:hover { transform: translateX(4px); box-shadow: var(--shadow); }
+    .area-icon { font-size: 2rem; flex-shrink: 0; }
+    .area-card h4 { font-size: 16px; font-weight: 600; color: var(--dark); margin-bottom: 2px; }
+    .area-card p { font-size: 13px; color: var(--slate); line-height: 1.5; }
+
+    .areas-img {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .areas-img img {
+      width: 100%; height: 480px; object-fit: cover;
+      display: block;
+    }
+    .areas-img-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(26,35,50,0.85));
+      padding: 2rem;
+      color: var(--white);
+    }
+    .areas-img-overlay h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; margin-bottom: 0.25rem;
+    }
+    .areas-img-overlay p { font-size: 13px; opacity: 0.8; }
+
+    /* ── TESTIMONIALS ────────────────────────── */
+    #testimonials {
+      background: linear-gradient(150deg, var(--ocean) 0%, var(--ocean-dk) 100%);
+      color: var(--white);
+    }
+    #testimonials .section-tag { color: rgba(255,255,255,0.6); }
+    #testimonials .section-h2 { color: var(--white); }
+    .testimonials-header { text-align: center; margin-bottom: 3.5rem; }
+    .testimonials-header .section-p { color: rgba(255,255,255,0.75); margin: 0 auto; }
+
+    .testimonials-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .testimonial {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: transform 0.2s, background 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .testimonial:hover { transform: translateY(-3px); background: rgba(255,255,255,0.15); }
+    .stars { color: var(--gold); font-size: 15px; letter-spacing: 2px; margin-bottom: 1rem; }
+    .testimonial q {
+      font-size: 15px; line-height: 1.7;
+      color: rgba(255,255,255,0.92);
+      font-style: italic;
+      display: block; margin-bottom: 1.5rem; flex: 1;
+    }
+    .testimonial-author { display: flex; align-items: center; gap: 10px; }
+    .author-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
+    .author-name { font-size: 14px; font-weight: 600; color: var(--white); }
+    .author-location { font-size: 12px; opacity: 0.65; }
+
+    @media (max-width: 1024px) {
+      .testimonials-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+    }
+
+    /* ── WHY CHOOSE ─────────────────────────── */
+    #why { background: var(--cream); }
+    .why-header { text-align: center; margin-bottom: 3.5rem; }
+
+    .why-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .why-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .why-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .why-icon {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--sand) 0%, var(--sand-dk) 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px; margin: 0 auto 1.5rem;
+    }
+    .why-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; font-weight: 600;
+      color: var(--dark); margin-bottom: 0.75rem;
+    }
+    .why-card p { font-size: 14px; color: var(--slate); line-height: 1.7; }
+
+    /* ── FAQ ─────────────────────────────────── */
+    #faq { background: var(--white); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .faq-intro .section-p { margin-bottom: 2rem; }
+
+    .faq-img {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .faq-img img { width: 100%; height: 420px; object-fit: cover; display: block; }
+
+    .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .faq-item {
+      border: 1.5px solid var(--sand-dk);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .faq-item.open { border-color: var(--ocean); }
+
+    .faq-q {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.1rem 1.25rem;
+      cursor: pointer;
+      user-select: none;
+      gap: 1rem;
+    }
+    .faq-q span { font-size: 14px; font-weight: 500; color: var(--dark); line-height: 1.4; }
+    .faq-chevron {
+      flex-shrink: 0;
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      background: var(--sand);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; color: var(--ocean);
+      transition: transform 0.3s, background 0.2s;
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); background: var(--ocean); color: var(--white); }
+
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .faq-a-inner {
+      padding: 0 1.25rem 1.1rem;
+      font-size: 14px; color: var(--slate); line-height: 1.7;
+    }
+
+    /* ── CONTACT ─────────────────────────────── */
+    #contact {
+      background: var(--sand);
+    }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: start;
+    }
+
+    .contact-info { }
+    .contact-info .section-p { margin-bottom: 2rem; }
+
+    .contact-detail {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1.1rem 1.25rem;
+      background: var(--white);
+      border-radius: 10px; margin-bottom: 0.75rem;
+      box-shadow: var(--shadow);
+    }
+    .contact-detail .icon { font-size: 20px; flex-shrink: 0; }
+    .contact-detail a, .contact-detail span { font-size: 14px; color: var(--ocean); text-decoration: none; font-weight: 500; }
+    .contact-detail a:hover { text-decoration: underline; }
+
+    .contact-form-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow-lg);
+    }
+    .contact-form-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; font-weight: 600;
+      color: var(--dark); margin-bottom: 0.5rem;
+    }
+    .contact-form-card > p {
+      font-size: 13px; color: var(--slate); margin-bottom: 1.75rem; line-height: 1.55;
+    }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    .form-group { display: flex; flex-direction: column; gap: 5px; margin-bottom: 0.75rem; }
+    .form-group label { font-size: 12px; font-weight: 600; color: var(--slate); letter-spacing: 0.3px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid var(--sand-dk);
+      border-radius: 7px;
+      font-family: 'Inter', sans-serif; font-size: 14px;
+      color: var(--dark); background: var(--cream);
+      outline: none; transition: border 0.2s;
+      resize: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--ocean); background: var(--white); }
+
+    .form-submit {
+      width: 100%; padding: 14px;
+      background: var(--ocean); color: var(--white);
+      border: none; border-radius: 7px;
+      font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500;
+      cursor: pointer; transition: background 0.2s, transform 0.15s;
+      margin-top: 0.5rem;
+    }
+    .form-submit:hover { background: var(--ocean-dk); transform: translateY(-1px); }
+
+    /* ── FOOTER ─────────────────────────────── */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.65);
+      padding: 60px 2rem 32px;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 3rem; margin-bottom: 3rem;
+    }
+    .footer-brand {}
+    .footer-logo {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 1rem;
+    }
+    .footer-logo-badge {
+      width: 36px; height: 36px;
+      background: var(--ocean);
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 14px; font-weight: 700; color: var(--white);
+    }
+    .footer-logo-text { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; color: var(--white); }
+    .footer-tagline { font-size: 13px; line-height: 1.65; margin-bottom: 1.25rem; }
+    .social-links { display: flex; gap: 0.75rem; }
+    .social-link {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none; font-size: 16px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .social-link:hover { background: var(--ocean); color: var(--white); border-color: var(--ocean); }
+
+    .footer-col h4 {
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(255,255,255,0.4); margin-bottom: 1.25rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.6rem; }
+    .footer-col ul li a {
+      font-size: 14px; color: rgba(255,255,255,0.6);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: var(--white); }
+
+    .footer-contact a {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 14px; color: rgba(255,255,255,0.65);
+      text-decoration: none; margin-bottom: 0.75rem;
+      transition: color 0.2s;
+    }
+    .footer-contact a:hover { color: var(--white); }
+    .footer-contact a span:first-child { font-size: 16px; }
+
+    .footer-bottom {
+      max-width: 1200px; margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 13px;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+    .footer-bottom a:hover { color: var(--white); }
+
+    /* ── MOBILE NAV ──────────────────────────── */
+    .mobile-nav {
+      display: none;
+      position: fixed; top: 72px; left: 0; right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--sand-dk);
+      padding: 1.5rem 2rem;
+      z-index: 999;
+      flex-direction: column; gap: 1rem;
+      box-shadow: var(--shadow);
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      font-size: 15px; font-weight: 500; color: var(--slate);
+      text-decoration: none; padding: 0.5rem 0;
+      border-bottom: 1px solid var(--sand);
+    }
+    .mobile-nav a:last-child { border-bottom: none; }
+
+    /* ── RESPONSIVE ─────────────────────────── */
+    @media (max-width: 1024px) {
+      .tiers { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+      .tier.popular { transform: none; }
+      .tier.popular:hover { transform: translateY(-4px); }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 900px) {
+      .stats-wrap { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-card { display: none; }
+      .stats-wrap { grid-template-columns: repeat(2, 1fr); }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--sand-dk); }
+      .stat-item:last-child { border-bottom: none; }
+      .areas-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    /* ── SCROLL ANIMATIONS ──────────────────── */
+    .fade-up {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up:nth-child(2) { transition-delay: 0.1s; }
+    .fade-up:nth-child(3) { transition-delay: 0.2s; }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAVBAR ─────────────────────────────────────────────── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="logo">
+      <div class="logo-badge">H&K</div>
+      <div class="logo-text">
+        <span class="hk">Haus &amp; Key</span>
+        <span class="sub">Co-Hosting</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">About</a></li>
+      <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#home" onclick="closeMobile()">Home</a>
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#why" onclick="closeMobile()">About</a>
+  <a href="#faq" onclick="closeMobile()">FAQ</a>
+</div>
+
+<!-- ─── HERO ───────────────────────────────────────────────── -->
+<section id="home">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-tag">Superhost <span class="hero-dot"></span> Guest Favorite <span class="hero-dot"></span> Santa Barbara <span class="hero-dot"></span></div>
+      <h1 class="hero-h1">Hosting, Handled<br/><em>Beautifully</em></h1>
+      <p class="hero-p">Santa Barbara-based Airbnb Superhost offering thoughtful, hands-on co-hosting for beautifully maintained homes from Montecito to Carpinteria.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+        <a href="#services" class="btn btn-outline">Explore Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ─── SERVICES ──────────────────────────────────────────── -->
+<section id="services">
+  <div class="container">
+    <div class="services-header">
+      <div class="section-tag">What We Offer</div>
+      <h2 class="section-h2">Simple, Transparent Pricing</h2>
+      <p class="section-p">Choose the level of support that fits your goals. No hidden fees, no long-term lock-ins — just honest co-hosting done right.</p>
+    </div>
+    <div class="tiers">
+      <!-- Tier 1 -->
+      <div class="tier fade-up">
+        <div class="tier-name">The Essentials</div>
+        <div class="tier-price">
+          <span class="pct">9</span><span class="pct-sym">%</span>
+        </div>
+        <p class="tier-price-note">of gross monthly revenue</p>
+        <p class="tier-desc">Perfect for hands-on owners who want core support without giving up control.</p>
+        <ul class="tier-features">
+          <li>Guest check-in & check-out coordination</li>
+          <li>Cleaning team scheduling & oversight</li>
+          <li>24/7 emergency guest support</li>
+          <li>Basic maintenance oversight</li>
+          <li>Guest messaging & screening</li>
+        </ul>
+        <a href="#contact" class="btn-tier">Get Started</a>
+      </div>
+      <!-- Tier 2 (popular) -->
+      <div class="tier popular fade-up">
+        <div class="popular-badge">Most Popular</div>
+        <div class="tier-name">The Smart Host</div>
+        <div class="tier-price">
+          <span class="pct">12</span><span class="pct-sym">%</span>
+        </div>
+        <p class="tier-price-note">of gross monthly revenue</p>
+        <p class="tier-desc">The most popular choice — maximize revenue with smart tools and proactive management.</p>
+        <ul class="tier-features">
+          <li>Everything in The Essentials</li>
+          <li>Dynamic pricing optimization</li>
+          <li>Listing creation & optimization</li>
+          <li>Review management & responses</li>
+          <li>Quarterly performance reports</li>
+          <li>Calendar & availability management</li>
+        </ul>
+        <a href="#contact" class="btn-tier">Get Started</a>
+      </div>
+      <!-- Tier 3 -->
+      <div class="tier fade-up">
+        <div class="tier-name">The Carefree Host</div>
+        <div class="tier-price">
+          <span class="pct">18</span><span class="pct-sym">%</span>
+        </div>
+        <p class="tier-price-note">of gross monthly revenue</p>
+        <p class="tier-desc">True hands-off ownership. We handle everything so you never have to think about it.</p>
+        <ul class="tier-features">
+          <li>Everything in The Smart Host</li>
+          <li>Full 24/7 dedicated support line</li>
+          <li>Advanced revenue management</li>
+          <li>Inventory & supply restocking</li>
+          <li>Monthly detailed insights report</li>
+          <li>Property improvement consulting</li>
+          <li>Multi-platform listing management</li>
+        </ul>
+        <a href="#contact" class="btn-tier">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ──────────────────────────────────────── -->
+<section id="testimonials">
+  <div class="container">
+    <div class="testimonials-header">
+      <div class="section-tag">Real Guest Reviews</div>
+      <h2 class="section-h2">What guests are saying</h2>
+      <p class="section-p">Real reviews from guests who've stayed at my Eastside Santa Barbara listing.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial fade-up">
+        <div class="stars">★★★★★</div>
+        <q>Britt's place was exactly as expected. Britt provided clear, helpful communication before check-in — easy-to-follow directions and great tips. The location was a plus. Everything was within less than a 10 minute drive. We had a smooth and enjoyable stay and would recommend it to others.</q>
+        <div class="testimonial-author">
+          <div class="author-avatar">👫</div>
+          <div>
+            <div class="author-name">Jazmin &amp; Guillermo</div>
+            <div class="author-location">San Jose, CA · May 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial fade-up">
+        <div class="stars">★★★★★</div>
+        <q>Brittany was very responsive and proactive in her messages with information about her place. The house was very clean and the backyard is wonderful and spacious. We would absolutely book again!</q>
+        <div class="testimonial-author">
+          <div class="author-avatar">👩</div>
+          <div>
+            <div class="author-name">Megan</div>
+            <div class="author-location">Los Angeles, CA · January 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial fade-up">
+        <div class="stars">★★★★★</div>
+        <q>The place looks exactly like the photos. The backyard is a highlight. Britt was very friendly and responsive and had great tips. Genuinely one of the best Airbnb experiences I've had.</q>
+        <div class="testimonial-author">
+          <div class="author-avatar">👩</div>
+          <div>
+            <div class="author-name">Alixandra</div>
+            <div class="author-location">New York, NY · April 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY CHOOSE ─────────────────────────────────────────── -->
+<section id="why">
+  <div class="container">
+    <div class="why-header">
+      <div class="section-tag">Why Haus &amp; Key</div>
+      <h2 class="section-h2">I'm a Host First.<br/>Not a Property Manager.</h2>
+      <p class="section-p" style="margin: 0 auto;">I built my own Airbnb from scratch — earned Superhost status, a Guest Favorite badge, and a 4.97★ rating. Now I do the same for other owners.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card fade-up">
+        <div class="why-icon">🤝</div>
+        <h3>I Actually Host</h3>
+        <p>I run my own Airbnb on Santa Barbara's Eastside — a Guest Favorite with 112 reviews and a 4.97★ rating. When I manage your property, I bring that same hands-on care to yours.</p>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-icon">📊</div>
+        <h3>No Surprises</h3>
+        <p>Clear pricing, honest reporting, and straightforward communication. I respond within an hour and keep you in the loop — the same way I do with my own guests.</p>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-icon">🗺️</div>
+        <h3>Born &amp; Based in Santa Barbara</h3>
+        <p>I live here. I know the Eastside, the Funk Zone, Montecito, and Carpinteria — the seasonal rhythms, the events that spike demand, and what guests are really looking for when they book.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ────────────────────────────────────────────────── -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-grid">
+      <div class="faq-intro">
+        <div class="section-tag">Common Questions</div>
+        <h2 class="section-h2">Everything You Need to Know</h2>
+        <p class="section-p">We believe in total clarity before you commit. Here are the questions we hear most often from prospective hosts.</p>
+        <br/>
+        <div class="faq-img">
+          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=85&auto=format&fit=crop" alt="Beautiful managed property" />
+        </div>
+      </div>
+      <div>
+        <div class="faq-list">
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">
+              <span>What types of properties do you manage?</span>
+              <div class="faq-chevron">▾</div>
+            </div>
+            <div class="faq-a">
+              <div class="faq-a-inner">We manage a wide range of properties along the Santa Barbara coast — from cozy one-bedroom beach bungalows to expansive luxury estates in the Montecito foothills. The key is that your property must be in one of our service areas and meet our quality standards for guest experience.</div>
+            </div>
+          </div>
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">
+              <span>Who handles guest communication?</span>
+              <div class="faq-chevron">▾</div>
+            </div>
+            <div class="faq-a">
+              <div class="faq-a-inner">I do — entirely. From the first inquiry through post-checkout review requests, I handle all guest communication. I maintain a 100% response rate and typically reply within minutes, which significantly boosts your ranking on Airbnb and other platforms.</div>
+            </div>
+          </div>
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">
+              <span>Can you manage multiple properties for one owner?</span>
+              <div class="faq-chevron">▾</div>
+            </div>
+            <div class="faq-a">
+              <div class="faq-a-inner">Yes — if you have more than one property, I can manage them together and provide combined monthly reporting. Reach out and we can talk through what makes sense for your situation.</div>
+            </div>
+          </div>
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">
+              <span>How does dynamic pricing work?</span>
+              <div class="faq-chevron">▾</div>
+            </div>
+            <div class="faq-a">
+              <div class="faq-a-inner">We use a combination of professional pricing software and our own local market expertise to adjust your nightly rate in real time based on demand, local events, competitor pricing, and seasonal trends. This typically results in 20–35% more revenue compared to flat-rate pricing.</div>
+            </div>
+          </div>
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">
+              <span>How is cleaning coordination handled?</span>
+              <div class="faq-chevron">▾</div>
+            </div>
+            <div class="faq-a">
+              <div class="faq-a-inner">I work with a vetted cleaner who specializes in short-term rental turnovers. I schedule and oversee every clean, do quality checks, and handle supply restocking on the Carefree Host tier. Cleaning fees are passed directly to guests — you never pay out of pocket for routine cleans.</div>
+            </div>
+          </div>
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">
+              <span>What happens if a guest leaves a bad review?</span>
+              <div class="faq-chevron">▾</div>
+            </div>
+            <div class="faq-a">
+              <div class="faq-a-inner">I try to address any issues during the stay before they become a review problem. If a guest does leave a negative review, I write a thoughtful, honest public response. I also look at what caused it and fix it going forward — that's just good hosting.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ────────────────────────────────────────────── -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-tag">Get In Touch</div>
+        <h2 class="section-h2">Let's Talk About<br/>Your Property</h2>
+        <p class="section-p">Drop me a message and I'll get back to you. Whether you have one question or want to talk through your whole situation, I'm happy to chat.</p>
+        <br/>
+        <div class="contact-detail">
+          <span class="icon">✉️</span>
+          <a href="mailto:hello@hausandkey.com">hello@hausandkey.com</a>
+        </div>
+        <div class="contact-detail">
+          <span class="icon">📍</span>
+          <span>Santa Barbara, CA &amp; Surrounding Areas</span>
+        </div>
+        <div class="contact-detail">
+          <span class="icon">📸</span>
+          <a href="https://instagram.com" target="_blank" rel="noopener">@hausandkey on Instagram</a>
+        </div>
+        <br/>
+        <p style="font-size: 13px; color: var(--slate); line-height: 1.65;">I typically respond within a few hours. Email is always the fastest way to reach me.</p>
+      </div>
+      <div class="contact-form-card">
+        <h3>Say Hello</h3>
+        <p>Tell me a little about your property and I'll get back to you within a day.</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="Jane" />
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Smith" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="jane@example.com" />
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="(805) 555-0100" />
+        </div>
+        <div class="form-group">
+          <label>Property Location</label>
+          <select>
+            <option value="" disabled selected>Select a location</option>
+            <option>Santa Barbara</option>
+            <option>Montecito</option>
+            <option>Carpinteria</option>
+            <option>Other Coastal Area</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tell Us About Your Property</label>
+          <textarea rows="3" placeholder="e.g. 3-bedroom cottage near the beach, currently on Airbnb..."></textarea>
+        </div>
+        <button class="form-submit" onclick="handleSubmit(event)">Send Message →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="footer-logo-badge">H&K</div>
+        <div class="footer-logo-text">Haus &amp; Key</div>
+      </div>
+      <p class="footer-tagline">Boutique Airbnb co-hosting for coastal California property owners. Personal, honest, local.</p>
+      <div class="social-links">
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-link" title="Instagram">📸</a>
+        <a href="mailto:hello@hausandkey.com" class="social-link" title="Email">✉️</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">The Essentials (9%)</a></li>
+        <li><a href="#services">The Smart Host (12%)</a></li>
+        <li><a href="#services">The Carefree Host (18%)</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-contact">
+      <h4>Contact</h4>
+      <a href="mailto:hello@hausandkey.com"><span>✉️</span><span>hello@hausandkey.com</span></a>
+      <a href="#home"><span>📍</span><span>Santa Barbara, CA</span></a>
+      <a href="https://instagram.com" target="_blank" rel="noopener"><span>📸</span><span>@hausandkey</span></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Haus &amp; Key. All rights reserved.</span>
+    <div style="display:flex;gap:1.5rem;">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── SCRIPTS ────────────────────────────────────────────── -->
+<script>
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburger.addEventListener('click', () => {
+    mobileNav.classList.toggle('open');
+  });
+  function closeMobile() { mobileNav.classList.remove('open'); }
+
+  // FAQ accordion
+  function toggleFaq(item) {
+    const answer = item.querySelector('.faq-a');
+    const isOpen = item.classList.contains('open');
+
+    // Close all
+    document.querySelectorAll('.faq-item').forEach(el => {
+      el.classList.remove('open');
+      el.querySelector('.faq-a').style.maxHeight = null;
+    });
+
+    // Open clicked if it was closed
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  }
+
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Form submission
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target;
+    btn.textContent = '✓ Message Sent!';
+    btn.style.background = 'var(--sage)';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = 'Send Message →';
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 3000);
+  }
+</script>
+</body>
+</html>

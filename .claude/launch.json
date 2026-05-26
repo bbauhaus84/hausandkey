@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "hausandkey",
+      "runtimeExecutable": "/Users/bbauhaus/.nvm/versions/node/v24.16.0/bin/node",
+      "runtimeArgs": ["server.js"],
+      "port": 3456
+    }
+  ]
+}
