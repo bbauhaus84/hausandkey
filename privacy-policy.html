@@ -54,10 +54,9 @@
       font-size: 14px; font-weight: 700;
       color: var(--white);
     }
-    .logo-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 17px; font-weight: 600;
-    }
+    .logo-text { display: flex; flex-direction: column; }
+    .logo-text .hk { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 600; color: var(--dark); line-height: 1.1; }
+    .logo-text .sub { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--ocean); font-weight: 500; }
     .back-link {
       font-size: 14px; color: var(--ocean);
       text-decoration: none; font-weight: 500;
@@ -111,7 +110,10 @@
   <div class="nav-inner">
     <a href="index.html" class="logo">
       <div class="logo-badge">H&K</div>
-      <span class="logo-name">Haus &amp; Key</span>
+      <div class="logo-text">
+        <span class="hk">Haus &amp; Key</span>
+        <span class="sub">Co-Hosting</span>
+      </div>
     </a>
     <a href="index.html" class="back-link">← Back to Home</a>
   </div>
